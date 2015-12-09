@@ -103,8 +103,8 @@ Example:
         <div id="dropArea" hidden$="{{!_shownDropText}}">{{dropText}}</div>
         <template is="dom-repeat" items="{{files}}">
           <div class="file">
-            <div class="name">
-              <span hidden$="{{noShowResult}}">{{item.name}}</span>
+            <div class="name" hidden$="{{noShowResult}}">
+              <span>{{item.name}}</span>
               <div class="commands">
                 <iron-icon icon="autorenew" title="{{retryText}}" on-click="_retryUpload" hidden$="{{!item.error}}"></iron-icon>
                 <iron-icon icon="cancel" title="{{removeText}}" on-click="_cancelUpload" hidden$="{{item.complete}}"></iron-icon>
