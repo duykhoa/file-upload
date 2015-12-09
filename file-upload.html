@@ -104,7 +104,7 @@ Example:
         <template is="dom-repeat" items="{{files}}">
           <div class="file">
             <div class="name">
-              <span>{{item.name}}</span>
+              <span hidden$="{{noShowResult}}">{{item.name}}</span>
               <div class="commands">
                 <iron-icon icon="autorenew" title="{{retryText}}" on-click="_retryUpload" hidden$="{{!item.error}}"></iron-icon>
                 <iron-icon icon="cancel" title="{{removeText}}" on-click="_cancelUpload" hidden$="{{item.complete}}"></iron-icon>
@@ -280,6 +280,15 @@ Example:
        * `_shownDropText` indicates whether or not the drop text should be shown
       */
       _shownDropText: {
+        type: Boolean,
+        value: false
+      },
+
+      /**
+      * `noShowResult` indicates whether or not display uploaded file_names
+      */
+
+      noShowResult: {
         type: Boolean,
         value: false
       }
